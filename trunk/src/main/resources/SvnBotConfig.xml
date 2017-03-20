@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : SvnBotConfig.xml.xml
+    Created on : 4. duben 2010, 15:48
+    Author     : Ondrej Zizka
+    Description:
+        Purpose of the document follows.
+-->
+
+<svnbotConfig>
+
+   <settings
+      allowJoinCommand = "true"
+      joinOnInvite = "true"
+      verbose = "true"
+      unsecuredShutdown = "false"
+      acceptInvitation = "true"
+      leaveOnAsk = "true"
+      adminUser = "ozizka"
+      smtpHost = "smtp.corp.redhat.com"
+      debugChannel = "#some"
+   />
+
+   <irc>
+      <nick>SvnBot-debug</nick>
+      <server host="porky.stuttgart.redhat.com">
+         <autoJoinChannels>
+            #some
+         </autoJoinChannels>
+         <!--
+            #embjopr
+            #jbossas
+            #jbossportal
+            #jbosssoaqa
+            #jboss-on
+         -->
+      </server>
+   </irc>
+
+  <repositories>
+    <repository name="JBoss AS" url="http://anonsvn.jboss.org/repos/jbossas/" checkInterval="300">
+      <ircChannels>jbossqa some</ircChannels>
+    </repository>
+    <repository name="JBoss Embedded Jopr" url="http://anonsvn.jboss.org/repos/embjopr/" checkInterval="300">
+      <ircChannels>embjopr some</ircChannels>
+    </repository>
+    <repository name="JBossQA" url="https://svn.devel.redhat.com/repos/jboss-qa/" checkInterval="300" user="ozizka" pass="">
+      <ircChannels>jbossqa some</ircChannels>
+    </repository>
+
+    <!--
+    <repository name="FutureTest" url="https://svn.devel.redhat.com/repos/jboss-qa/" checkInterval="300" user="ozizka" pass="">
+      <paths>
+        <path path="/bots" channels="some"/>
+        <path path="/EmbJopr" channels="embjopr"/>
+        <path path="/hudson" channels="hudson"/>
+      <paths>
+    </repository>
+    -->
+
+  </repositories>
+
+</svnbotConfig>
